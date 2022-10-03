@@ -1,0 +1,15 @@
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/bin/Debug/net6.0/practice-2
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/bin/Debug/net6.0/practice-2.deps.json
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/bin/Debug/net6.0/practice-2.runtimeconfig.json
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/bin/Debug/net6.0/practice-2.dll
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/bin/Debug/net6.0/practice-2.pdb
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/practice-2.csproj.AssemblyReference.cache
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/practice-2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/practice-2.AssemblyInfoInputs.cache
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/practice-2.AssemblyInfo.cs
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/practice-2.csproj.CoreCompileInputs.cache
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/practice-2.dll
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/refint/practice-2.dll
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/practice-2.pdb
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/practice-2.genruntimeconfig.cache
+/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/Debug/net6.0/ref/practice-2.dll

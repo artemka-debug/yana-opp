@@ -39,4 +39,19 @@ public class FileWriter
     {
         return _softwareDeveloperWriter.ReadAll();
     }
+    
+    public void RemoveStudents(string firstName, string lastName)
+    {
+        _studentFileWriter.Remove(firstName, lastName);
+    }
+    
+    public void RemoveLibrarians(string firstName, string lastName)
+    {
+        _librarianWriter.Remove(firstName, lastName);
+    }
+    
+    public void RemoveSoftwareDevelopers(string firstName, string lastName)
+    {
+        _softwareDeveloperWriter.Remove(firstName, lastName);
+    }
 }

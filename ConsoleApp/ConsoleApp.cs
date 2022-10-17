@@ -14,6 +14,9 @@ public class ConsoleApp
         new ListStudentsAction("List student", 5),
         new ListLibrariansAction("List librarians", 6),
         new ListSoftwareDevelopersAction("List software developers", 7),
+        new RemoveLibrarianAction("Remove librarian", 8),
+        new RemoveSoftwareDeveloperAction("Remove software developer", 9),
+        new RemoveStudentAction("Remove student", 10),
     };
 
     public void Run()

@@ -4,4 +4,6 @@ public interface IFileWriter<T>
 {
     public T[] ReadAll();
     public void Write(T data);
+
+    public void Remove(string firstName, string lastName);
 }

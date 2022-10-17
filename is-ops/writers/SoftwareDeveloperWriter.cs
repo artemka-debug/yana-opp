@@ -52,4 +52,36 @@ public class SoftwareDeveloperWriter : IFileWriter<SoftwareDeveloper>
         fs.Write(Encoding.ASCII.GetBytes(metadata), 0, metadata.Length);
         fs.Write(Encoding.ASCII.GetBytes(json), 0, json.Length);
     }
+    
+    public void Remove(string firstName, string lastName)
+    {
+        if (!File.Exists(_filePath))
+        {
+            return;
+        }
+        
+        using FileStream fs = new FileStream(_filePath, FileMode.Open, FileAccess.Read);
+        var buffer = new byte[fs.Length];
+        fs.Read(buffer, 0, buffer.Length);
+        
+        var json = Encoding.ASCII.GetString(buffer);
+        var lines = json.Split("\n");
+        var removeIndex = 0;
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            var line = lines[i];
+
+            if (line.Contains($"\"FirstName\":\"{firstName}\",\"SecondName\":\"{lastName}\""))
+            {
+                removeIndex = i;
+            }
+        }
+        
+        lines = lines.Where((_, index) => index != removeIndex - 1 && index != removeIndex).ToArray();
+        json = string.Join("\n", lines);
+
+        using StreamWriter writer = new StreamWriter(_filePath, false);
+        writer.Write(json);
+    }
 }

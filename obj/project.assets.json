@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/artemdovhopolyi/nau/RiderProjects/practice-2/practice-2.csproj",
+      "projectUniqueName": "/Users/artemdovhopolyi/nau/RiderProjects/yana-opp/practice-2.csproj",
       "projectName": "practice-2",
-      "projectPath": "/Users/artemdovhopolyi/nau/RiderProjects/practice-2/practice-2.csproj",
+      "projectPath": "/Users/artemdovhopolyi/nau/RiderProjects/yana-opp/practice-2.csproj",
       "packagesPath": "/Users/artemdovhopolyi/.nuget/packages/",
-      "outputPath": "/Users/artemdovhopolyi/nau/RiderProjects/practice-2/obj/",
+      "outputPath": "/Users/artemdovhopolyi/nau/RiderProjects/yana-opp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/artemdovhopolyi/.nuget/NuGet/NuGet.Config"

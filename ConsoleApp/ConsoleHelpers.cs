@@ -1,17 +1,19 @@
+using practice_2.models;
+
 namespace practice_2;
 
 public class ConsoleHelpers
 {
     private int tableWidth = 100;
     
-    protected int GetValidNumberFromConsole(string message, int[] validNumbers)
+    public double GetValidNumberFromConsole(string message, double[] validNumbers)
     {
-        int number = 0;
+        double number = 0;
         bool isValid = false;
         
         do {
             string input = Console.ReadLine();
-            isValid = int.TryParse(input, out number) && validNumbers.Contains(number);
+            isValid = double.TryParse(input, out number) && (validNumbers.Length == 0 || validNumbers.Contains(number));
             if (isValid)
             {
                 return number;
@@ -22,35 +24,55 @@ public class ConsoleHelpers
         return number;
     }
     
-    protected void PrintFormattedTableRow(Student student)
+    public string GetStringWithMessage(string message)
+    {
+        Console.Write(message);
+        var result = Console.ReadLine();
+        
+        return result ?? string.Empty;
+    }
+    
+    public double GetNumberWithMessage(string message)
+    {
+        Console.Write(message);
+        return GetValidNumberFromConsole("Invalid number", Array.Empty<double>());
+    }
+    
+    public void PrintFormattedTableRow(Student student)
     {
         PrintRow(
-            student.Name.ToString(), 
-            student.StudyingYear.ToString(), 
-            student.AverageMark.ToString()
+            student.FirstName,
+            student.SecondName, 
+            student.Height.ToString(),
+            student.Weight.ToString(),
+            student.PassportNumber,
+            student.PassportSeries,
+            student.StudentId
         );
     }
     
-    protected void PrintFormattedTableHeader(bool useIndex = true)
+    public void PrintFormattedTableRow(Librarian librarian)
     {
-        var headers = useIndex ? 
-            new string[] { "Index", "Name", "Year", "Average Mark" } : 
-            new string[] { "Name", "Year", "Average Mark" };
-        
+        PrintRow(
+            librarian.FirstName, 
+            librarian.SecondName
+        );
+    }
+    
+    public void PrintFormattedTableRow(SoftwareDeveloper softwareDeveloper)
+    {
+        PrintRow(
+            softwareDeveloper.FirstName, 
+            softwareDeveloper.SecondName
+        );
+    }
+    
+    public void PrintFormattedTableHeader(string[] headers)
+    {
         PrintRow(headers);
     }
     
-    protected void PrintFormattedTableRow(int index, Student student)
-    {
-        PrintRow(
-            index.ToString(), 
-            student.Name.ToString(), 
-            student.StudyingYear.ToString(), 
-            student.AverageMark.ToString()
-        );
-    }
-    
-    protected void PrintLine()
+    public void PrintLine()
     {
         Console.WriteLine(new string('-', tableWidth));
     }

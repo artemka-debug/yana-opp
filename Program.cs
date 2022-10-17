@@ -4,8 +4,7 @@ public class Program
 {
     public static void Main()
     {
-        var studentsList = new DoublyLinkedList();
-        var consoleApp = new ConsoleApp(studentsList);
+        var consoleApp = new ConsoleApp();
 
         consoleApp.Run();
     }

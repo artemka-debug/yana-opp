@@ -1,21 +1,20 @@
+using practice_2.Actions;
+
 namespace practice_2;
 
-public class ConsoleApp : ConsoleHelpers
+public class ConsoleApp
 {
-    private static readonly ConsoleActionAbstract[] Actions =
+    private ConsoleHelpers _consoleHelpers = new ConsoleHelpers();
+    private static readonly ConsoleActionAbstract[] _actions =
     {
-        new AddNewStudentAction("Add new student", 1),
-        new ShowStudentTableAction("Show all students", 2),
-        new RemoveStudentAction("Remove student", 3),
-        new ShowStudentTableByTaskAction("Show students the excellent student on first year of study", 4)
+        new GetStudentsWithIdealWeightAction("Get students with ideal weight", 1),
+        new AddStudentAction("Add student", 2),
+        new AddLibrarianAction("Add librarian", 3),
+        new AddSoftwareDeveloperAction("Add software developer", 4),
+        new ListStudentsAction("List student", 5),
+        new ListLibrariansAction("List librarians", 6),
+        new ListSoftwareDevelopersAction("List software developers", 7),
     };
-
-    private DoublyLinkedList list;
-
-    public ConsoleApp(DoublyLinkedList list)
-    {
-        this.list = list;
-    }
 
     public void Run()
     {
@@ -26,7 +25,7 @@ public class ConsoleApp : ConsoleHelpers
     {
         Console.WriteLine("Choose action:");
         
-        foreach (var action in Actions)
+        foreach (var action in _actions)
         {
             Console.WriteLine($"{action.Index}. {action.Name}");
         }
@@ -36,14 +35,7 @@ public class ConsoleApp : ConsoleHelpers
 
     private void ExecuteAction(ConsoleActionAbstract action)
     {
-        action.Execute(list);
-        var isActionChangedList = action.Index is 1 or 3;
-        
-        if (isActionChangedList)
-        {
-            Actions[1].Execute(list);
-        }
-
+        action.Execute(_consoleHelpers);
         ListActions();
         WaitForAction();
     }
@@ -51,16 +43,18 @@ public class ConsoleApp : ConsoleHelpers
     private void WaitForAction()
     {
         var actionIndex = GetActionIndexFromConsole();
-        ExecuteAction(Actions.ElementAt(actionIndex));
+        ExecuteAction(_actions.ElementAt(actionIndex));
     }
 
     private int GetActionIndexFromConsole()
     {
-        var actionIndex = GetValidNumberFromConsole(
+        var doubleRange = Enumerable.Range(1, _actions.Count()).ToArray().Select(x => (double)x).ToArray(); 
+        
+        var actionIndex = _consoleHelpers.GetValidNumberFromConsole(
             "Invalid action index. Please, try again.",
-            Enumerable.Range(1, Actions.Count()).ToArray()
+            doubleRange
         );
 
-        return actionIndex - 1;
+        return (int)actionIndex - 1;
     }
 }

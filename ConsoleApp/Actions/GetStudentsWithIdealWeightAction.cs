@@ -20,4 +20,5 @@ public class GetStudentsWithIdealWeightAction : ConsoleActionAbstract
             consoleHelpers.PrintFormattedTableRow(student);
         }
     }
+    
 }

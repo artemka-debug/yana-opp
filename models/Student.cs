@@ -1,6 +1,6 @@
 namespace practice_2.models;
 
-public class Student
+public class Student //declare class student
 {
     public Student(string firstName, string secondName, double height, double weight, string studentId, string passportSeries, string passportNumber)
     {
